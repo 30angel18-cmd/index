@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¡A última hora y sin perder la cabeza! · Inteligencia emocional</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rojo: #d7263d;
+    --naranja: #f46036;
+    --amarillo: #f4a259;
+    --verde-claro: #8cc084;
+    --verde: #2e933c;
+    --texto: #1f2933;
+  }
+
+  html, body {
+    background: #eee;
+    color: var(--texto);
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .infografia {
+    max-width: 780px;
+    margin: 24px auto;
+    padding: 28px 28px 24px;
+    border-radius: 18px;
+    background: linear-gradient(180deg,
+      var(--rojo) 0%,
+      var(--naranja) 22%,
+      var(--amarillo) 45%,
+      var(--verde-claro) 72%,
+      var(--verde) 100%);
+    box-shadow: 0 8px 30px rgba(0,0,0,.18);
+  }
+
+  header { text-align: center; color: #fff; margin-bottom: 22px; }
+  header .tema {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,.22);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  header h1 {
+    font-size: 34px;
+    line-height: 1.1;
+    font-weight: 800;
+    text-shadow: 0 2px 6px rgba(0,0,0,.25);
+  }
+  header p { margin-top: 8px; font-size: 15px; opacity: .95; }
+
+  .tarjeta {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    background: rgba(255,255,255,.95);
+    border-radius: 14px;
+    border-left: 8px solid var(--color);
+    padding: 16px 18px 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.12);
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .t1 { --color: var(--rojo); }
+  .t2 { --color: var(--naranja); }
+  .t3 { --color: #e08e2b; }
+  .t4 { --color: #5fa55a; }
+  .t5 { --color: var(--verde); }
+
+  .lateral {
+    flex: 0 0 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .numero {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--color);
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .icono {
+    width: 54px; height: 54px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--color) 14%, #fff);
+    border: 2px solid var(--color);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+
+  .contenido { flex: 1; }
+  .contenido h2 {
+    font-size: 19px;
+    color: var(--color);
+    margin-bottom: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .etiqueta {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background: var(--color);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .resumen { font-size: 14.5px; margin-bottom: 8px; }
+
+  .dialogo { display: flex; flex-direction: column; gap: 5px; }
+  .burbuja {
+    max-width: 85%;
+    padding: 6px 12px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .burbuja b { font-size: 12px; display: block; opacity: .75; }
+  .izq { align-self: flex-start; background: #f1f3f5; border-bottom-left-radius: 4px; }
+  .der {
+    align-self: flex-end;
+    background: color-mix(in srgb, var(--color) 18%, #fff);
+    border-bottom-right-radius: 4px;
+    text-align: right;
+  }
+  .pensamiento { font-style: italic; }
+
+  .moraleja {
+    background: #fff;
+    border: 3px dashed var(--verde);
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-align: center;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .moraleja h3 { color: var(--verde); font-size: 20px; margin-bottom: 6px; }
+  .moraleja p { font-size: 15px; }
+  .claves {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .claves span {
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #e8f5e9;
+    color: #1b5e20;
+  }
+
+  footer { text-align: center; color: #fff; font-size: 12px; margin-top: 12px; opacity: .9; }
+
+  @page { margin: 10mm; }
+
+  @media print {
+    html, body { background: #fff; font-size: 13px; }
+    .infografia {
+      max-width: none;
+      margin: 0;
+      padding: 18px 20px 14px;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    header { margin-bottom: 14px; }
+    header h1 { font-size: 28px; }
+    .tarjeta { padding: 12px 14px 10px; margin-bottom: 11px; box-shadow: none; }
+    .resumen, .burbuja { font-size: 13px; }
+    .icono { width: 46px; height: 46px; font-size: 24px; }
+    .numero { width: 34px; height: 34px; font-size: 17px; }
+
+  }
+
+  @media (max-width: 560px) {
+    .infografia { margin: 0; border-radius: 0; padding: 18px 12px; }
+    header h1 { font-size: 26px; }
+    .tarjeta { gap: 10px; padding: 12px; }
+    .lateral { flex-basis: 46px; }
+    .icono { width: 42px; height: 42px; font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<main class="infografia">
+
+  <header>
+    <span class="tema">Inteligencia emocional</span>
+    <h1>¡A última hora y sin perder la cabeza!</h1>
+    <p>Laura tiene que exponer mañana a las 7:00 a.m. Son las 11:00 p.m. y su compañero Andrés le escribe…</p>
+  </header>
+
+  <section class="tarjeta t1">
+    <div class="lateral">
+      <div class="numero">1</div>
+      <div class="icono" aria-hidden="true">⏰</div>
+    </div>
+    <div class="contenido">
+      <h2>Balde de agua fría</h2>
+      <p class="resumen">A pocas horas de la entrega, llega la noticia que nadie quiere: falta una parte del trabajo.</p>
+      <div class="dialogo">
+        <div class="burbuja izq"><b>Andrés</b>Parce, qué pena… no alcancé a hacer mi parte 😬</div>
+        <div class="burbuja der"><b>Laura</b>¿¡Cómo así!? ¡Si eso es mañana a primera hora!</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarjeta t2">
+    <div class="lateral">
+      <div class="numero">2</div>
+      <div class="icono" aria-hidden="true">🌡️</div>
+    </div>
+    <div class="contenido">
+      <h2>Frenar en seco <span class="etiqueta">Autoconciencia</span></h2>
+      <p class="resumen">Laura nota que le hierve la sangre y que está a punto de mandarle un audio regañándolo. Se detiene y le pone nombre a lo que siente.</p>
+      <div class="dialogo">
+        <div class="burbuja der pensamiento"><b>Laura (pensando)</b>Quieta, mija. Estoy que echo humo… si escribo así, la embarro.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarjeta t3">
+    <div class="lateral">
+      <div class="numero">3</div>
+      <div class="icono" aria-hidden="true">💬</div>
+    </div>
+    <div class="contenido">
+      <h2>En los zapatos del otro <span class="etiqueta">Empatía</span></h2>
+      <p class="resumen">En vez de atacar, pregunta qué pasó. Escuchar cambia toda la conversación.</p>
+      <div class="dialogo">
+        <div class="burbuja der"><b>Laura</b>Bueno, ¿qué pasó? ¿Todo bien?</div>
+        <div class="burbuja izq"><b>Andrés</b>Mi mamá se enfermó y me tocó llevarla a urgencias.</div>
+        <div class="burbuja der"><b>Laura</b>Uy, no sabía. ¿Cómo sigue ella?</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarjeta t4">
+    <div class="lateral">
+      <div class="numero">4</div>
+      <div class="icono" aria-hidden="true">🧊</div>
+    </div>
+    <div class="contenido">
+      <h2>Cabeza fría <span class="etiqueta">Autorregulación</span></h2>
+      <p class="resumen">Con la calma de vuelta, Laura deja la queja y propone un plan concreto para sacar el trabajo adelante.</p>
+      <div class="dialogo">
+        <div class="burbuja der"><b>Laura</b>Hagamos así: vos hacés las diapositivas y yo el guion. Nos vemos a las 6 en la biblio.</div>
+        <div class="burbuja izq"><b>Andrés</b>¡De una! Gracias por la paciencia, parcera.</div>
+      </div>
+    </div>
+  </section>
+
+    <section class="tarjeta t5">
+    <div class="lateral">
+      <div class="numero">5</div>
+      <div class="icono" aria-hidden="true">✅</div>
+    </div>
+    <div class="contenido">
+      <h2>Salvados por la campana</h2>
+      <p class="resumen">7:00 a.m.: la exposición sale bien y la amistad sigue intacta. Trabajo en equipo, no pelea.</p>
+      <div class="dialogo">
+        <div class="burbuja izq"><b>Profe</b>Muy bien, muchachos. Se nota el trabajo en equipo.</div>
+        <div class="burbuja der"><b>Laura</b>¡Uf, nos salvamos! Pero la próxima no lo dejamos para última hora, ¿sí o qué?</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="moraleja">
+    <h3>Moraleja</h3>
+    <p>Las emociones no se apagan: se manejan. Darte cuenta de lo que sentís, entender al otro y pensar antes de actuar convierte un desastre de última hora en una solución.</p>
+    <div class="claves">
+      <span>🌡️ Reconocé lo que sentís</span>
+      <span>💬 Escuchá antes de juzgar</span>
+      <span>🧊 Respirá y buscá soluciones</span>
+    </div>
+  </section>
+
+  <footer>Infografía · Inteligencia emocional</footer>
+</main>
+</body>
+</html>
